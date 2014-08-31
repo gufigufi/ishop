@@ -53,11 +53,11 @@ function eyestopper($eyestopper){
 
 /* ===Получение массива товаров по категории==== */
 function products($category){
-    $query = "(SELECT goods_id, name, anons, price, hits, new, sale
+    $query = "(SELECT goods_id, name, img, anons, price, hits, new, sale
                     FROM goods
                         WHERE goods_brandid=$category AND visible='1')
                 UNION
-                (SELECT goods_id, name, anons, price, hits, new, sale
+                (SELECT goods_id, name, img, anons, price, hits, new, sale
                     FROM goods
                         WHERE goods_brandid IN
                         (
