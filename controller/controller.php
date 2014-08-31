@@ -30,6 +30,12 @@ switch($view){
         $eyestoppers = eyestopper('sale');
         break;
 
+    case ('cat'): // товары категорий
+        $category = abs((int)$_GET['category']);
+        $products = products($category); // получаем массив из модели
+        break;
+
+
     default: //если из адресной строки получено имя несуществующего вида
         $view = 'hits';
         $eyestoppers = eyestopper('hits');

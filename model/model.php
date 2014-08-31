@@ -50,4 +50,25 @@ function eyestopper($eyestopper){
 
     return $eyestoppers;
 }
+
+/* ===Получение массива товаров по категории==== */
+function products($category){
+    $query = "(SELECT goods_id, name, anons, price, hits, new, sale
+                    FROM goods
+                        WHERE goods_brandid=$category AND visible='1')
+                UNION
+                (SELECT goods_id, name, anons, price, hits, new, sale
+                    FROM goods
+                        WHERE goods_brandid IN
+                        (
+                            SELECT brand_id FROM brands WHERE parent_id=$category
+                        ) AND visible='1')";
+    $res = mysql_query($query) or die(mysql_error());
+    $products = array();
+    while($row = mysql_fetch_assoc($res)){
+        $products[] = $row;
+    }
+    return $products;
+}
+
 /* ===Айстопперы - новинки, лидеры продаж, распродажа==== */
