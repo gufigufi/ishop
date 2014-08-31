@@ -12,6 +12,7 @@
 <script type="text/javascript" src="<?=TEMPLATE?>js/jquery-ui-1.8.22.custom.min.js"></script>
 <script type="text/javascript" src="<?=TEMPLATE?>js/jquery.cookie.js"></script>
 <script type="text/javascript" src="<?=TEMPLATE?>js/workscripts.js"></script>
+<script type="text/javascript"> var query = '<?=$_SERVER['QUERY_STRING'];?>'; </script>
 <title>Интернет магазин сотовых телефонов</title>
 </head>
 

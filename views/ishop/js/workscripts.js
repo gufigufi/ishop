@@ -20,5 +20,25 @@ $(document).ready(function(){
         window.location = link;
 	});
     /* ===Аккордеон=== */
-    
+
+    /* ===переключятель видов=== */
+    if($.cookie("display") == null){
+        $.cookie("display", "grid");
+    }
+    $(".grid-list").click(function(){
+        var display = $(this).attr("id"); // получаем значение переключятеля вида
+        display = (display == "grid") ? "grid" : "list"; // допустимые значения
+        if(display == $.cookie["display"]){
+            // если значение совподает с кукой - ничего не делаем
+            return false
+        }
+        else{
+            // иначе установим куку с новым значением вида
+            $.cookie("display", display);
+            window.location = "?" + query;
+        }
+        return false
+    });
+    /* ===переключятель видов=== */
+
 });
