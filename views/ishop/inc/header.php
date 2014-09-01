@@ -19,7 +19,7 @@
 <body>
 <div class="main">
 	<div class="header">
-		<a href="/"><img class="logo" src="<?=TEMPLATE?>images/logo.jpg" alt="Интернет магазин сотовых телефонов" /></a>
+		<a href="<?=PATH?>"><img class="logo" src="<?=TEMPLATE?>images/logo.jpg" alt="Интернет магазин сотовых телефонов" /></a>
 		<img class="slogan" src="<?=TEMPLATE?>images/slogan.jpg" alt="Интернет-магазин Сотовых телефонов" />
 		<div class="head-contact">
 		<p><strong>Телефон:</strong><br />
@@ -41,7 +41,7 @@
 		</form>	
 	</div>
 	<ul class="menu">
-		<li><a href="#">Главная</a></li>
+		<li><a href="<?=PATH?>">Главная</a></li>
 		<li><a href="#">О магазине</a></li>
 		<li><a href="#">Оплата и доставка</a></li>
 		<li><a href="#">Покупка в кредит</a></li>

@@ -10,14 +10,25 @@
 				<div class="basket">
 					<h2>Корзина</h2>
 					<div>
+                        <p>
+                            <?php if($_SESSION['total_quantity']): ?>
+                                Товаров в корзине: <br/>
+                                <span><?=$_SESSION['total_quantity'];?></span> на сумму <span><?=$_SESSION['total_sum'];?></span> руб
+                                <a href="#"><img src="<?=TEMPLATE?>images/oformit.jpg" alt="" /></a>
+                                <?php else: ?>
+                                    Корзина пуста
+                            <?php endif; ?>
+                        </p>
+                        <!--
 						<p>
 							У вас в корзине<br />
 							<span>1</span> товар на <span>30 459</span> руб
 						</p>
 						<a href="#"><img src="<?=TEMPLATE?>images/oformit.jpg" alt="" /></a>
+						-->
 						
 					</div>
-				</div>
+				</div> <!--.basket-->
 				<div class="share-search">
 					<h2>Выбор по параметрам</h2>
 					<div>

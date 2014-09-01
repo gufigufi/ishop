@@ -28,10 +28,11 @@
             <div class="product-table-img">
                 <a href="?viev=product&goods_id=<?=$product['goods_id'];?>"><img src="<?=TEMPLATE;?>images/<?=$product['img'];?>" width="64" alt=""/></a>
 
-                <div>
-                    <img src="<?=TEMPLATE;?>images/ico-line-new.jpg" alt="новинка"/>
-                    <img src="<?=TEMPLATE;?>images/ico-line-lider.jpg" alt="лидер"/>
-                </div>
+                <div> <!-- иконки -->
+                    <?php if($product['new']) echo '<img src="' .TEMPLATE. 'images/ico-cat-new.png" alt="новинка"/>'; ?>
+                    <?php if($product['hits']) echo '<img src="' .TEMPLATE. 'images/ico-cat-lider.png" alt="лидер продаж"/>'; ?>
+                    <?php if($product['sale']) echo '<img src="' .TEMPLATE. 'images/ico-cat-sale.png" alt="распродажа"/>'; ?>
+                </div> <!-- иконки -->
             </div>
         </div>
         <p class="cat-table-more"><a href="?viev=product&goods_id=<?=$product['goods_id'];?>">подробнее...</a></p>
@@ -50,11 +51,11 @@
             <p>Цена : <span><?=$product['price'];?></span></p>
             <a href="?view=addtocart&goods_id=<?=$product['goods_id'];?>"><img src="<?=TEMPLATE;?>images/addcard-table.jpg" alt="Добавить в корзину"/></a>
 
-            <div>
-                <img src="<?=TEMPLATE;?>images/ico-line-new.jpg" alt="новинки"/>
-                <img src="<?=TEMPLATE;?>images/ico-line-lider.jpg" alt="лидер продаж"/>
-                <img src="<?=TEMPLATE;?>images/ico-line-sale.jpg" alt="распродажа"/>
-            </div>
+            <div> <!-- иконки -->
+                <?php if($product['new']) echo '<img src="' .TEMPLATE. 'images/ico-line-new.jpg" alt="новинка"/>'; ?>
+                <?php if($product['hits']) echo '<img src="' .TEMPLATE. 'images/ico-line-lider.jpg" alt="лидер продаж"/>'; ?>
+                <?php if($product['sale']) echo '<img src="' .TEMPLATE. 'images/ico-line-sale.jpg" alt="распродажа"/>'; ?>
+            </div> <!-- иконки -->
             <p class="cat-line-more"><a href="?viev=product&goods_id=<?=$product['goods_id'];?>">подробнее...</a></p>
         </div>
         <div class="product-line-opis">

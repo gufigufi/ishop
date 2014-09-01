@@ -3,7 +3,7 @@
 defined('ISHOP') or die('Access denied');
 
 // домен
-define('PATH', 'http://ishop/');
+define('PATH', 'http://localhost/ishop/ishop/');
 
 // модель
 define('MODEL', 'model/model.php');
