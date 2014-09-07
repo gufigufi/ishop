@@ -16,6 +16,12 @@ $cat = catalog();
 // получение массива информеров
 $informers = informer();
 
+//регистрация
+if($_POST['reg']){
+    registration();
+    redirect();
+}
+
 // получение динамичной части шаблона #content
 $view = empty($_GET['view']) ? 'hits' : $_GET['view'];
 
@@ -57,6 +63,10 @@ switch($view){
             }
         }
         redirect();
+        break;
+
+    case ('reg'):
+        //регистрация
         break;
 
 

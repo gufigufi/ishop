@@ -90,4 +90,37 @@ function total_sum($goods){
 
 }
 
-/* ===товара==== */
+/* ===Регистрация==== */
+function registration(){
+    $error = ''; //флаг проверки пустых полей
+
+    $login = mysql_real_escape_string(trim($_POST['login']));
+    $pass = trim($_POST['pass']);
+    $name = mysql_real_escape_string(trim($_POST['name']));
+    $email = mysql_real_escape_string(trim($_POST['email']));
+    $phone = mysql_real_escape_string(trim($_POST['phone']));
+    $address = mysql_real_escape_string(trim($_POST['address']));
+
+    if(empty($login)) $error .= '<li>Не указан логин</li>';
+    if(empty($pass)) $error .= '<li>Не указан пароль</li>';
+    if(empty($name)) $error .= '<li>Не указано ФИО</li>';
+    if(empty($email)) $error .= '<li>Не указан Email</li>';
+    if(empty($phone)) $error .= '<li>Не указан телефон</li>';
+    if(empty($address)) $error .= '<li>Не указан адрес</li>';
+
+    if(empty($error)){
+        //если все поля заполнены
+
+    }
+    else{
+        //если не заполнены обязательные поля
+        $_SESSION['reg']['res'] = "Не заполнены обязательные поля: <ul> $error </ul>";
+        $_SESSION['reg']['login'] = $login;
+        $_SESSION['reg']['name'] = $name;
+        $_SESSION['reg']['email'] = $email;
+        $_SESSION['reg']['phone'] = $phone;
+        $_SESSION['reg']['address'] = $address;
+    }
+}
+
+/* ===Регистрация==== */

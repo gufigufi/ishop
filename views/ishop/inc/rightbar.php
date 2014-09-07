@@ -3,10 +3,23 @@
 			<div class="right-bar-cont">
 				<div class="enter">
 					<h2>Авторизация</h2>
-					<div>
-						<a href="#"><img src="<?=TEMPLATE?>images/enter.jpg" alt="" /></a>
+					<div class="authform">
+                        <?php if(!$_SESSION['auth']['user']): ?>
+                            <form action="#" method="post">
+                                <label for="login">Логин: </label><br/>
+                                <input type="text" name="login" id="login"/><br/>
+                                <label for="pass">Пароль: </label><br/>
+                                <input type="password" id="pass" name="pass"/><br/><br/>
+                                <input type="submit" name="auth" id="auth" value="Войти"/>
+
+                                <p class="link"><a href="?view=reg">Регистрация</a></p>
+                            </form>
+                            <?php else: ?>
+                                <p>Добро пожаловать, <?=$_SESSION['auth']['user'];?></p>
+                                <a href="do=logout">Выход</a>
+                        <?php endif; ?>
 					</div>	
-				</div>	
+				</div> <!--.enter-->
 				<div class="basket">
 					<h2>Корзина</h2>
 					<div>
@@ -19,14 +32,6 @@
                                     Корзина пуста
                             <?php endif; ?>
                         </p>
-                        <!--
-						<p>
-							У вас в корзине<br />
-							<span>1</span> товар на <span>30 459</span> руб
-						</p>
-						<a href="#"><img src="<?=TEMPLATE?>images/oformit.jpg" alt="" /></a>
-						-->
-						
 					</div>
 				</div> <!--.basket-->
 				<div class="share-search">
@@ -35,7 +40,7 @@
 						<form method="post" action="">
 						<p>Стоимость:</p>
 						от <input class="podbor-price" type="text" name="start-price" />
-						до <input class="podbor-price" type="text" name="ыещз-price" />
+						до <input class="podbor-price" type="text" name="stop-price" />
 						 руб.
 						 <br /><br />
 						<p>Производители:</p>
